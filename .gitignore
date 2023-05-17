@@ -40,3 +40,8 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+### log file ###
+*.log
+*.log.*
+*.gz

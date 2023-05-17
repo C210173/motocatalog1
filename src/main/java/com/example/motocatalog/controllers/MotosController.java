@@ -1,5 +1,6 @@
 package com.example.motocatalog.controllers;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.bean.Brand;
 import com.example.bean.Motorcycle;
 
+import lombok.extern.slf4j.Slf4j;
+
 
 @Controller
+@Slf4j
 public class MotosController {
 	@RequestMapping("/hello")
 	public String hello(@RequestParam String name, Model model) {
@@ -38,6 +42,8 @@ public class MotosController {
 		
 		model.addAttribute("brands", brands);
 		model.addAttribute("motos", motos);
+		
+		log.debug("motos: {}", motos);//ログ出力
 		
 		return "moto_list";
 	}
